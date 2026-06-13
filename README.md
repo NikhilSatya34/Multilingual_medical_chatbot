@@ -1,37 +1,22 @@
-# 🌍 Week 4: Multilingual Medical Chatbot
+## 🌍 Multilingual Medical Chatbot
 
-**Final Week Project** | Elevance Skills Internship | June 2026
+A production-ready web application that answers medical questions in **20+ languages** with real-time translation and AI-powered responses.
 
-A complete multilingual medical chatbot that answers medical questions in **20+ languages** with real-time translation and AI-powered responses.
-
----
-
-## 📋 **PROJECT OVERVIEW**
-
-### **What You Built:**
-A production-ready web application that:
-- ✅ Detects user's language automatically (50+ languages)
-- ✅ Translates medical questions to English
-- ✅ Generates accurate medical answers using Google Gemini API
-- ✅ Translates answers back to user's language
-- ✅ Displays answers in beautiful UI
-- ✅ Tracks language statistics
-- ✅ Provides multi-language output
-
-### **Key Achievement:**
-```
-From single-language chatbot (Week 2)
-          ↓
-To GLOBAL multilingual platform (Week 4)
-          ↓
-Now accessible to users in 20+ languages!
-```
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://example.com)
 
 ---
 
-## 🌐 **SUPPORTED LANGUAGES**
+### 🚀 Overview
 
-### **Fully Supported (20+ languages):**
+This multilingual medical chatbot transforms a single-language Q&A system into a global platform accessible to users in 20+ languages! Built during an Elevance Skills internship, this application automatically detects a user's language, translates their medical question to English, generates an accurate medical response using Google Gemini API, and then translates the answer back to the user's native language.
+
+**From single-language chatbot (Week 2) → To GLOBAL multilingual platform (Week 4)**
+
+---
+
+### 🌐 Supported Languages
+
+The chatbot supports 20+ languages with automatic detection:
 
 | Language | Code | Flag |
 |----------|------|------|
@@ -58,526 +43,188 @@ Now accessible to users in 20+ languages!
 
 ---
 
-## 📁 **PROJECT STRUCTURE**
+### ⚙️ Features
 
-```
-task - 4/
-├── language_detector.py        (270 lines)
-│   └─ Detects 50+ languages
-│   └─ Returns confidence scores
-│   └─ Supports multiple text inputs
-│
-├── translator.py               (300 lines)
-│   └─ Translates text between languages
-│   └─ Supports 100+ language pairs
-│   └─ Has fallback dictionary
-│
-├── multilingual_chatbot.py    (350 lines)
-│   └─ Integrates all components
-│   └─ Handles multi-language Q&A
-│   └─ Manages conversation history
-│   └─ Tracks language statistics
-│
-├── multilingual_app.py         (400 lines)
-│   └─ Streamlit web interface
-│   └─ 4 interactive tabs
-│   └─ Beautiful UI with styling
-│   └─ Real-time display
-│
-├── requirements_week4.txt
-│   └─ All dependencies listed
-│   └─ Ready to install
-│
-├── .env
-│   └─ API keys (not in repo for security)
-│
-└── README_WEEK4.md            (This file)
-    └─ Complete documentation
+- ✅ **Automatic Language Detection**: Identifies user language with 95%+ accuracy
+- ✅ **Real-time Translation**: Instant translation between 20+ languages
+- ✅ **Medical Q&A**: Powered by Google Gemini AI for accurate medical information
+- ✅ **Multi-Language Answers**: Get responses in multiple languages simultaneously
+- ✅ **Statistics Dashboard**: Track which languages are most commonly used
+- ✅ **Beautiful UI**: Intuitive Streamlit interface with responsive design
+- ✅ **English View**: Toggle to see the original English answer
+- ✅ **Fallback Translation**: Dictionary-based fallback for translation errors
+
+---
+
+### 🧩 Architecture
+
+```mermaid
+graph TD
+    A[User Input] --> B[Language Detector]
+    B --> C[Translate to English]
+    C --> D[Medical Q&A with Gemini API]
+    D --> E[Translate back to User Language]
+    E --> F[Display in Streamlit UI]
 ```
 
 ---
 
-## ⭐ **KEY FEATURES**
+### 🛠️ Technology Stack
 
-### **1. Language Detection**
-```python
-Input: "¿Qué es la diabetes?"
-        ↓
-Detection: Spanish (98% confidence)
-        ↓
-Auto-process in Spanish
-```
-
-**Features:**
-- Automatic language detection
-- 95%+ accuracy
-- Confidence scoring
-- Fallback to English
-
-### **2. Real-time Translation**
-```python
-User Question (Spanish)
-    ↓ translate to English
-English Question
-    ↓ medical Q&A
-English Answer
-    ↓ translate back to Spanish
-User Answer (Spanish)
-```
-
-**Features:**
-- Sub-second latency
-- 100+ language pairs
-- Maintains medical terminology
-- Fallback dictionary
-
-### **3. Beautiful Web Interface**
-```
-┌─────────────────────────────────┐
-│ 🌍 Multilingual Medical Chatbot  │
-├─────────────────────────────────┤
-│ [💬 Chat] [🌐 Multi] [📊 Stats] │
-├─────────────────────────────────┤
-│ Select Language: [Spanish ▼]    │
-│ Ask question: [            ]    │
-│ [🔍 Ask]                        │
-├─────────────────────────────────┤
-│ Q: ¿Qué es la diabetes?         │
-│                                 │
-│ Answer: [Beautiful green box]   │
-│ La diabetes es...               │
-└─────────────────────────────────┘
-```
-
-### **4. Multi-Language Answers**
-Ask once, get answers in multiple languages:
-```
-Q: "What is heart disease?"
-↓
-A: Available in English, Spanish, French, German, Portuguese
-```
-
-### **5. Statistics Dashboard**
-- Track which languages users prefer
-- Show language distribution
-- Generate charts
-- Monitor usage
+- **Backend**: Python 3.14
+- **LLM**: Google Gemini API
+- **Language Detection**: langdetect (Python library)
+- **Translation**: google-trans-new (open-source)
+- **Frontend**: Streamlit 1.58.0 with custom CSS
+- **Data Visualization**: Pandas
+- **Environment**: python-dotenv
 
 ---
 
-## 🛠️ **TECHNOLOGY STACK**
+### 🚀 How to Run
 
-### **Backend:**
-- **Python 3.14** - Main language
-- **Google Gemini API** - LLM for medical Q&A
-- **langdetect** - Language detection
-- **google-trans-new** - Translation
+#### Step 1: Install Dependencies
 
-### **Frontend:**
-- **Streamlit 1.58.0** - Web framework
-- **Custom CSS** - Beautiful styling
-- **Pandas** - Data visualization
-
-### **Architecture:**
-```
-User Input
-    ↓
-Language Detector (langdetect)
-    ↓
-Translator (google-trans-new)
-    ↓
-Medical Q&A (Google Gemini API)
-    ↓
-Translator (back to user language)
-    ↓
-Display (Streamlit UI)
-```
-
----
-
-## 🚀 **HOW TO RUN**
-
-### **Step 1: Install Dependencies**
 ```bash
-cd "D:\internship_tasks\task - 4"
-pip install -r requirements_week4.txt
+cd multilingual-medical-chatbot
+pip install -r requirements.txt
 ```
 
-### **Step 2: Create .env File**
+#### Step 2: Set Up API Key
+
+Create a `.env` file in the root directory:
+
 ```
 GEMINI_API_KEY=your_api_key_here
 ```
 
-### **Step 3: Run App**
+**Note**: Your API key should never be committed to public repositories.
+
+#### Step 3: Launch the App
+
 ```bash
 python -m streamlit run multilingual_app.py
 ```
 
-### **Step 4: Open Browser**
+#### Step 4: Access the Application
+
+Open your browser and navigate to:
 ```
 http://localhost:8501
 ```
 
 ---
 
-## 📊 **EXAMPLE USAGE**
+### 💡 Example Usage
 
-### **Example 1: Spanish User**
+**Spanish User Question**:
 ```
-Input: "¿Cuáles son los síntomas de la diabetes?"
+Input: "¿Qué es la diabetes?"
 Language Detected: Spanish (100% confidence)
-Translated to English: "What are the symptoms of diabetes?"
-Medical Answer: "Common symptoms include increased thirst, frequent urination..."
-Translated to Spanish: "Los síntomas comunes incluyen mayor sed, micción frecuente..."
-Displayed: In Spanish with beautiful formatting
-View in English: Click to see English version
+Translated to English: "What is diabetes?"
+Medical Answer: "Diabetes is a chronic condition that affects how your body processes blood sugar."
+Translated to Spanish: "La diabetes es una condición crónica que afecta cómo su cuerpo procesa el azúcar en la sangre."
 ```
 
-### **Example 2: Multi-Language**
+**Multi-Language Output**:
 ```
 Question: "What is asthma?"
-Languages Selected: English, Spanish, French, German
-↓
-English: "Asthma is a chronic respiratory condition..."
-Spanish: "El asma es una condición respiratoria crónica..."
-French: "L'asthme est une condition respiratoire chronique..."
-German: "Asthma ist ein chronischer Atemwegszustand..."
-```
-
-### **Example 3: Statistics**
-```
-Total Questions: 15
-Languages Used: 8 different languages
-- English: 5 (33%)
-- Spanish: 4 (27%)
-- French: 3 (20%)
-- German: 2 (13%)
-- Others: 1 (7%)
+Answers: Available in English, Spanish, French, German, Portuguese
 ```
 
 ---
 
-## 📈 **PERFORMANCE METRICS**
+### 📊 Statistics Dashboard
 
-| Metric | Value |
-|--------|-------|
-| Language Detection Accuracy | 95%+ |
-| Translation Latency | <1 second |
-| Medical Q&A Response Time | 2-5 seconds |
-| UI Load Time | <2 seconds |
-| Supported Languages | 20+ |
-| Language Pairs | 100+ |
-| Free Tier Limit | 20 requests/day |
+The application tracks and displays usage statistics:
+- Total questions answered
+- Languages used by users
+- Distribution of language usage (bar chart)
 
 ---
 
-## 🎓 **LEARNING OUTCOMES**
+### ⚠️ Important Notes
 
-### **Skills Acquired:**
-✅ Machine Translation NLP  
-✅ Language Detection Models  
-✅ Cross-lingual Processing  
-✅ Multilingual UI Design  
-✅ API Integration (Gemini)  
-✅ Real-time Translation  
-✅ Streamlit Web Development  
-✅ Global Application Design  
-
-### **Code Quality:**
-✅ 1,320+ lines of production code  
-✅ Professional documentation  
-✅ Error handling  
-✅ Scalable architecture  
-✅ Best practices followed  
+- **Medical Disclaimer**: This chatbot provides educational information only. **Always consult healthcare professionals for specific medical advice.**
+- **API Quotas**: Google Gemini API has a free tier limit (20 requests/day). When quota is exceeded, the system will display a helpful message indicating the limitation.
+- **Translation Fallback**: If translation service fails, a basic dictionary translation with common medical terms is used as a fallback.
 
 ---
 
-## 🔄 **WORKFLOW DIAGRAM**
+### 📂 Project Structure
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                   USER INPUT                            │
-│        (Any language, any medical question)             │
-└────────────────────┬────────────────────────────────────┘
-                     │
-┌────────────────────▼────────────────────────────────────┐
-│        LANGUAGE DETECTION (langdetect)                  │
-│   Detects: Spanish (98% confidence)                    │
-│   Supports: 50+ languages                               │
-└────────────────────┬────────────────────────────────────┘
-                     │
-┌────────────────────▼────────────────────────────────────┐
-│        TRANSLATION TO ENGLISH (google-trans-new)        │
-│   "¿Qué es la diabetes?" → "What is diabetes?"        │
-└────────────────────┬────────────────────────────────────┘
-                     │
-┌────────────────────▼────────────────────────────────────┐
-│        MEDICAL Q&A (Google Gemini API)                 │
-│   Input: "What is diabetes?"                            │
-│   Output: Medical answer in English                     │
-└────────────────────┬────────────────────────────────────┘
-                     │
-┌────────────────────▼────────────────────────────────────┐
-│        TRANSLATION BACK (google-trans-new)              │
-│   "Diabetes is..." → "La diabetes es..."               │
-└────────────────────┬────────────────────────────────────┘
-                     │
-┌────────────────────▼────────────────────────────────────┐
-│        DISPLAY IN STREAMLIT UI                          │
-│   Question: ¿Qué es la diabetes?                       │
-│   Language: Spanish (100%)                              │
-│   Answer: [Beautiful green box with answer]             │
-│   View in English: [Click to see English]              │
-└─────────────────────────────────────────────────────────┘
+multilingual-medical-chatbot/
+├── multilingual_app.py            # Main Streamlit web application
+├── multilingual_chatbot_fixed.py  # Core logic: detection → translation → AI → translation back
+├── language_detector.py           # Detects 50+ languages with confidence scores
+├── translator_fixed.py            # Translates between languages with fallback dictionary
+├── requirements.txt               # All Python dependencies
+├── .env                           # Environment variables (API keys - NOT COMMITTED)
+├── README.md                      # This documentation
+└── README_WEEK4_FINAL.md          # Original internship submission document
 ```
 
 ---
 
-## 🎯 **COMPARISON: WEEK 1 → WEEK 4**
+### 🎓 Learning Outcomes
 
-### **Week 1: Sentiment Analysis**
-```
-Languages: 1 (English only)
-Features: 5
-Lines of code: 550+
-Users: English speakers
-```
+This project demonstrates mastery of:
 
-### **Week 2: Medical Q&A**
-```
-Languages: 1 (English only)
-Features: 8
-Lines of code: 800+
-Users: English speakers
-Knowledge Base: Static
-```
-
-### **Week 3: Dynamic Knowledge Base**
-```
-Languages: 1 (English only)
-Features: 15
-Lines of code: 1,670+
-Users: English speakers
-Knowledge Base: Dynamic (FAISS)
-```
-
-### **Week 4: Multilingual Chatbot**
-```
-Languages: 20+ (GLOBAL!)
-Features: 10+ new
-Lines of code: 1,320+ (total: 4,340+)
-Users: WORLDWIDE!
-Knowledge Base: Dynamic + Multilingual
-```
+- NLP: Language detection and translation
+- AI/ML Integration: Google Gemini API
+- Full-stack Development: Streamlit UI with backend logic
+- Cross-cultural Application Design
+- Secure API Implementation
+- Professional Documentation
 
 ---
 
-## 📞 **API QUOTAS & LIMITS**
+### 🧪 Testing Checklist
 
-### **Google Gemini API (Free Tier):**
-```
-Requests per day: 20
-Cost: FREE
-Status: Perfect for testing
-```
-
-### **If you exceed quota:**
-```
-Wait: 49+ seconds (auto-reset)
-Or: Upgrade to PAID plan (very cheap: $0.000075 per request)
-Or: Use different API key
-```
+- [ ] Language detector works with 5+ languages
+- [ ] Translation between multiple language pairs
+- [ ] Medical Q&A with Gemini API
+- [ ] Multi-language output functionality
+- [ ] Statistics dashboard displays correct data
+- [ ] UI is responsive on desktop/mobile
+- [ ] Error handling (empty queries, API failures)
+- [ ] Fallback translation works
 
 ---
 
-## ✅ **TESTING CHECKLIST**
+### 📞 Support & Resources
 
-```
-FEATURES TESTED:
-☐ Language detector (5+ languages)
-☐ Translator (multiple pairs)
-☐ Medical Q&A (Gemini API)
-☐ English chat
-☐ Spanish chat
-☐ French chat
-☐ German chat
-☐ Multi-language output
-☐ Statistics dashboard
-☐ About page
+**Documentation**:
+- README.md - This comprehensive guide
+- README_WEEK4_FINAL.md - Original internship submission with detailed test cases
 
-UI TESTED:
-☐ Answer display (green box)
-☐ View in English (shows English)
-☐ Language info display
-☐ Responsive design
-☐ All buttons working
-☐ Charts displaying
-☐ Mobile friendly
+**API References**:
+- [Streamlit Documentation](https://docs.streamlit.io)
+- [Google Gemini API](https://ai.google.dev)
+- [langdetect Library](https://github.com/Mimino666/langdetect)
+- [google-trans-new](https://github.com/lushan88a/google_translate_this)
 
-SCREENSHOTS TAKEN:
-☐ English chat
-☐ Spanish chat
-☐ French chat
-☐ German chat
-☐ Multi-language
-☐ Statistics
-☐ About page
-```
+**Troubleshooting**:
+- API quota issues? Wait 49+ seconds or upgrade to a paid plan
+- Import errors? Run `pip install -r requirements.txt`
+- Translation not working? Fallback dictionary will activate
+- UI issues? Clear browser cache and refresh
 
 ---
 
-## 📦 **DELIVERABLES**
+### ✅ Completion & Achievement
 
-✅ **Code:**
-- 5 Python modules
-- 1,320+ lines
-- Production quality
-- Fully documented
+This project successfully completed the 4-week internship with:
 
-✅ **Documentation:**
-- README_WEEK4.md (this file)
-- QUICK_START_WEEK4.md
-- Inline code comments
+✅ 4,340+ total lines of code across all internships
+✅ 20+ supported languages
+✅ Production-ready architecture
+✅ Comprehensive documentation
+✅ Professional UI and UX
 
-✅ **Web App:**
-- 4 interactive tabs
-- Beautiful UI
-- Real-time processing
-- Statistics tracking
-
-✅ **Testing:**
-- All features tested
-- 7+ screenshots
-- Multiple languages verified
-- Error handling verified
+**Ready for industry!** 🚀
 
 ---
 
-## 🎉 **INTERNSHIP COMPLETION**
-
-### **Final Statistics:**
-
-```
-TOTAL PROJECT METRICS:
-├─ Weeks: 4
-├─ Projects: 4
-├─ Lines of Code: 4,340+
-├─ Files Created: 20+
-├─ Features: 38+
-├─ Languages Supported: 20+
-├─ Hours of Work: 40+
-├─ Difficulty: Intermediate → Advanced
-└─ Status: ✅ 100% COMPLETE!
-
-SKILLS LEARNED:
-├─ NLP & Sentiment Analysis
-├─ Q&A Systems
-├─ Vector Databases (FAISS)
-├─ Text Embeddings
-├─ Machine Translation
-├─ Language Detection
-├─ Web Development (Streamlit)
-├─ LLM Integration (Gemini API)
-├─ Git & GitHub
-└─ Production Code Quality
-```
-
----
-
-## 📧 **SUBMISSION**
-
-### **GitHub Repository:**
-```
-https://github.com/YOUR_USERNAME/multilingual-medical-chatbot
-```
-
-### **Email to Mentor:**
-```
-To: training@elevanceskills.com
-Subject: Week 4 COMPLETE: Multilingual Medical Chatbot
-Body: Full project details with GitHub link
-```
-
----
-
-## 🌟 **ACHIEVEMENTS UNLOCKED**
-
-```
-🏆 Completed 4-week internship
-🏆 Built 4 production-grade AI projects
-🏆 Created 4,340+ lines of code
-🏆 Learned NLP, AI, Web Development
-🏆 Deployed global multilingual application
-🏆 Mastered Git & GitHub
-🏆 Professional documentation
-🏆 Ready for junior developer role!
-```
-
----
-
-## 📞 **SUPPORT & RESOURCES**
-
-### **Documentation:**
-- README_WEEK4.md (complete guide)
-- QUICK_START_WEEK4.md (5-min setup)
-- Code comments throughout
-
-### **Troubleshooting:**
-- API quota issues? Wait 50 seconds
-- Import errors? Run `pip install -r requirements_week4.txt`
-- Translation not working? Fallback dictionary activates
-- UI issues? Clear browser cache, refresh
-
-### **Learning Resources:**
-- Streamlit docs: https://docs.streamlit.io
-- Google Gemini API: https://ai.google.dev
-- langdetect: https://github.com/Mimino666/langdetect
-- google-trans-new: https://github.com/lushan88a/google_translate_this
-
----
-
-## 🎊 **CONCLUSION**
-
-You've successfully completed a **professional-grade multilingual medical chatbot**!
-
-This project demonstrates:
-- ✅ Full-stack development
-- ✅ AI/ML integration
-- ✅ NLP capabilities
-- ✅ Web application design
-- ✅ Production-ready code
-
-**You're ready for the industry!** 🚀
-
----
-
-## 📋 **PROJECT METADATA**
-
-```
-Project Name: Multilingual Medical Chatbot
-Project Code: WEEK-4-FINAL
-Intern Name: Nikhil
-Intern ID: VMMhP2
-Email: b.nikhilsatya.dev@gmail.com
-Portal: intern.elevanceskills.com
-Duration: 1 week (Week 4 of 4-week internship)
-Status: ✅ COMPLETE
-Difficulty: Advanced
-Lines of Code: 1,320+ (this week)
-Total Lines (All 4 weeks): 4,340+
-Languages: 20+ supported
-Technology: Python, Streamlit, Gemini API, FAISS, Transformers
-```
-
----
-
-**🎉 CONGRATULATIONS ON COMPLETING YOUR INTERNSHIP, KANNA! 🎉**
-
-You've built amazing projects and learned incredible skills!
-
-**Ready to change the world with AI!** 🚀🌍
-
----
-
-*Last Updated: June 12, 2026*  
-*Status: ✅ Complete & Ready for Production*
+*Project by Nikhil Satya | Elevance Skills Internship, June 2026*
